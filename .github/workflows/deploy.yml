@@ -15,7 +15,8 @@ jobs:
 
     - name: Deploy to IIS using Web Deploy
       run: |
-        "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" ^
-        -source:contentPath='.' ^
-        -dest:auto,computerName="https://localhost:8172/msdeploy.axd?site=apsxWebDeploy",username='CONS',password='Cons.2324',authType='Basic' ^
-        -allowUntrusted
+        & "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" `
+          -source:contentPath='.' `
+          -dest:auto,computerName="https://localhost:8172/msdeploy.axd?site=apsxWebDeploy",username='ConsAdmin',password='Cons.1234',authType='Basic' `
+          -allowUntrusted
+      shell: pwsh
