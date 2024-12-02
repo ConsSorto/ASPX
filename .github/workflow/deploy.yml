@@ -1,0 +1,21 @@
+name: Deploy ASPX App
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Deploy to IIS using Web Deploy
+      run: |
+        "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" ^
+        -source:contentPath='.' ^
+        -dest:auto,computerName="https://localhost:8172/msdeploy.axd?site=NombreSitioIIS",username='usuario',password='contraseña',authType='Basic' ^
+        -allowUntrusted
