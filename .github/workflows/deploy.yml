@@ -12,7 +12,8 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
-
+      with:
+        path: WebApplication1  
     - name: Deploy to IIS using Web Deploy
       shell: cmd
       run: |
