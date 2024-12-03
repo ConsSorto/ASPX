@@ -12,13 +12,12 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
-      with:
-        path: WebApplication1  
+
     - name: Deploy to IIS using Web Deploy
       shell: cmd
       run: |
         "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" ^
         -verb:sync ^
-        -source:contentPath="C:\inetpub\wwwroot\aspx" ^
+        -source:contentPath="./WebApplication1" ^
         -dest:auto,computerName="https://win-c8dhj5q388i:8173/msdeploy.axd",username='CONS',password='Cons.1234',authType='Basic' ^
         -allowUntrusted
