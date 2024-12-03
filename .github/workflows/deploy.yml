@@ -19,5 +19,5 @@ jobs:
         "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" ^
         -verb:sync ^
         -source:contentPath="C:\inetpub\wwwroot\aspx" ^
-        -dest:auto,computerName="https://localhost:8172/msdeploy.axd?site=aspx",username='CONS',password='Cons.1234',authType='Basic' ^
+        -dest:auto,computerName="https://0.0.0.0:8172/msdeploy.axd?site=aspx",username='CONS',password='Cons.1234',authType='Basic' ^
         -allowUntrusted
