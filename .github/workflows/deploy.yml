@@ -21,5 +21,4 @@ jobs:
         -source:contentPath="C:\inetpub\wwwroot\aspx" ^
         -dest:auto,computerName="https://win-c8dhj5q388i:8173/msdeploy.axd",username='CONS',password='Cons.1234',authType='Basic' ^
         -allowUntrusted
-        -useChecksum
-        -verbose
+        -whatif
