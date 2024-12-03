@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: windowsserver2022
 
     steps:
     - name: Checkout Code
